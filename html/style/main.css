@@ -8,11 +8,11 @@ div.room {
   width: 20rem;
   height: 10rem;
   margin: 0.5rem;
-  box-shadow: 2px 2px 2px 2px black;
+  box-shadow: 2px 2px 2px 2px #222222;
   border-radius: 3px;
 }
 div.room > header {
-  background-color: #330000;  
+  background-color: #000000;
   font-weight:bold;  
   padding: 0.25rem;
 }
