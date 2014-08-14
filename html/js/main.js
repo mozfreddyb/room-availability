@@ -12,6 +12,7 @@ poll(function (e) {
     for (var room in j) {
         var div = document.createElement("div");
         div.id = room;
+        div.classList.remove("free","busy"); // reset busy/free status.
         div.classList.add("room");
         var bf = j[room][0] == true ? "busy" : "free"
         div.classList.add(bf);
