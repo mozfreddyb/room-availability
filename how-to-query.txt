@@ -1,0 +1,26 @@
+https://mail.mozilla.com/home/ber201@mozilla.com?view=day&fmt=freebusy
+
+ber 201 = kaffeeklatsch
+Location: "BER 205 Gretchenfrage" <ber205@mozilla.com>
+ber 210 zeitgeist
+
+
+curl: 'https://mail.mozilla.com/home/ber201@mozilla.com?view=day&date=20140811&fmt=ifb&start=0d&end=24h'
+
+layout:
+
+BEGIN:VCALENDAR
+PRODID:Zimbra-Calendar-Provider
+VERSION:2.0
+METHOD:PUBLISH
+BEGIN:VFREEBUSY
+ORGANIZER:mailto:ber201@mozilla.com
+DTSTAMP:20140811T130952Z
+DTSTART:20140811T130952Z
+DTEND:20140812T130952Z
+URL:http://zmmbox6.mail.corp.phx1.mozilla.com:8080/service/home/ber201@mozilla.com?view=day&date=20140811&fmt=ifb&start=0d&end=24h
+FREEBUSY;FBTYPE=BUSY:20140812T100000Z/20140812T103000Z
+END:VFREEBUSY
+END:VCALENDAR
+
+

@@ -1,0 +1,23 @@
+html {
+  font-family: sans-serif;
+  color: white;
+  background-color: #4D4E53;
+}
+div.room {
+  float:left;
+  width: 20rem;
+  height: 10rem;
+  margin: 0.5rem;
+  box-shadow: 2px 2px 2px 2px black;
+  border-radius: 3px;
+}
+div.room > header {
+  background-color: #330000;  
+  font-weight:bold;  
+  padding: 0.25rem;
+}
+div.room > p {
+  text-align: center;  
+}
+div.room.busy { background-color: #FF9500;}
+div.room.free  { background-color: #0095DD; }
