@@ -5,7 +5,7 @@ var url = require("url");
 var querystring = require("querystring");
 var file = new static.Server('html', {
   headers: {
-    //"Content-Security-Policy": "default-src 'self'; object-src 'none';",
+    "Content-Security-Policy": "default-src 'self'; object-src 'none';",
   }
 });
 
