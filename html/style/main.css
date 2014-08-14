@@ -21,3 +21,10 @@ div.room > p {
 }
 div.room.busy { background-color: #FF9500;}
 div.room.free  { background-color: #0095DD; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+footer > a { color: #000; text-decoration: none; }
