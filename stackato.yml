@@ -1,0 +1,10 @@
+name: berlin-rooms
+framework:
+        type: node
+        runtime: node010
+           
+url:
+        - berlin-rooms.paas.allizom.org
+
+processes:
+        web: node webs.js
