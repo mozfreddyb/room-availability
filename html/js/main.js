@@ -9,6 +9,7 @@ function poll(cb) {
 }
 poll(function (e) {
     var j = e.target.response;
+	if (typeof j == "string") j = JSON.parse(j);
     for (var room in j) {
         var div = document.createElement("div");
         div.id = room;
@@ -35,6 +36,7 @@ setInterval(function() {
     console.log("Refreshing..")
     poll(function(e) {
         var j = e.target.response;
+        if (typeof j == "string") j = JSON.parse(j);
         for (var room in j) {
             var div = document.querySelector("div#"+room);
             var bf = j[room][0] == true ? "busy" : "free"
