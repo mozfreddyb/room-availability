@@ -11,7 +11,7 @@ ROOMS = {
 var TARGET_TZ = "Europe/Berlin";
 
 function makeURL(addr) {
-    return 'https://mail.mozilla.com/home/'+addr+'?view=day&fmt=ifb&start=0d&end=24h';
+    return 'https://mail.mozilla.com/home/'+addr+'?view=day&fmt=ifb&start=-1h&end=24h';
 }
 
 exports.ROOMSTATUS = {};
@@ -32,10 +32,10 @@ function get_busy_times(vcal_s) {
           start = mt[0];
           end = mt[1];
           // parse as given (UTC)
-          start = moment.tz(start, "YYYYMMDDTHHmmssZ", "UTC")
-          end = moment.tz(end, "YYYYMMDDTHHmmssZ", "UTC")
+          start = moment.tz(start, "YYYYMMDDTHHmmssZ", "UTC");
+          end = moment.tz(end, "YYYYMMDDTHHmmssZ", "UTC");
           // convert to local (e.g. europe/berlin)
-          events.push([start.tz(TARGET_TZ), end.tz(TARGET_TZ)])
+          events.push([start.tz(TARGET_TZ), end.tz(TARGET_TZ)]);
         }
     }
     return events;
@@ -55,9 +55,9 @@ function get_room_status(addr, name) {
         for (var i=0; i< events.length; i++) {
             var start = events[i][0];
             var end = events[i][1];
-            if (now.diff(end) < 0) {
+            if (end.diff(now) > 0) {
                 // meeting hasn't ended yet
-                if (now.diff(start) > 0) {
+                if (start.diff(now) < 0) {
                     // this meeting is running
                     currently_busy = true;
                 }
@@ -65,7 +65,7 @@ function get_room_status(addr, name) {
                     // this meeting is in the future,
                     // but does it start earlier than the one we already know?
                     if (next_meeting) {
-                        if (now.diff(start) < now.diff(next_meeting[0])) {
+                        if (start.diff(now) > next_meeting[0].diff(now)) {
                             next_meeting = [start, end];
                         }
                     }
