@@ -5,6 +5,7 @@ framework:
            
 url:
         - berlin-rooms.paas.allizom.org
+        - ber-conf.paas.allizom.org
 
 processes:
         web: node webs.js
