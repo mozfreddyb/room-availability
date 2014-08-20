@@ -13,7 +13,6 @@ poll(function (e) {
     for (var room in j) {
         var div = document.createElement("div");
         div.id = room;
-        div.classList.remove("free","busy"); // reset busy/free status.
         div.classList.add("room");
         var bf = j[room][0] == true ? "busy" : "free";
         div.classList.add(bf);
@@ -38,6 +37,7 @@ setInterval(function() {
         if (typeof j == "string") { j = JSON.parse(j); }
         for (var room in j) {
             var div = document.querySelector("div#"+room);
+            div.classList.remove("free","busy"); // reset busy/free status.
             var bf = j[room][0] == true ? "busy" : "free";
             div.classList.add(bf);
             var header = div.querySelector("header");
